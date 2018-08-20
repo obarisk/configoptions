@@ -1,0 +1,8 @@
+config_list:
+  a: 10
+  b: 100
+  l:
+    l1: a
+    l2: b
+config_int: 10
+config_str: str
