@@ -12,15 +12,15 @@ devtools::install_github("obarisk/configoptions")
 ```r
 library(configoptions)
 tryCatch({
-  getOptions("myconf")
+  getOption("myconf")
 }, error=function(e) {
   conditionMessage(e)
 })
 configinit(list(myconf="myconf"))
-getOptions("myconf")
+getOption("myconf")
 configinit(cfg=system.file("extdata", "example.yml", package="configoptions"))
-getOptions("config_list")
-getOptions("config_int")
-getOptions("config_str")
-getOptions("myconf")
+getOption("config_list")
+getOption("config_int")
+getOption("config_str")
+getOption("myconf")
 ```
