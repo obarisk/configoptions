@@ -3,7 +3,7 @@ Title: Config Options
 Version: 0.0.1
 Authors@R: person("Roy", "Zhong", email = "obarisk@gmail.com", role = c("aut", "cre"))
 Description: Config Options read a folder of config files into R options.
-Depends: R (>= 3.5.0)
+Depends: R (>= 3.4.0)
 Imports:
   yaml
 License: GPL-3
