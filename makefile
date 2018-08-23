@@ -5,4 +5,7 @@ build:
 	R -e 'devtools::build()'
 
 install:
-	R CMD INSTALL ./../configoptions_0.0.1.tar.gz
+	R -e 'devtools::install_github("obarisk/configoptions")'
+
+clean:
+	rm ../configoptions_*.tar.gz
