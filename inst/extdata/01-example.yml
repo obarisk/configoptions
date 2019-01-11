@@ -6,3 +6,4 @@ config_list:
     l2: b
 config_int: 10
 config_str: str
+optval: example.yml

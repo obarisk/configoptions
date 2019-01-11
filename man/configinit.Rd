@@ -4,7 +4,7 @@
 \alias{configinit}
 \title{configinit}
 \usage{
-configinit(val = list(), cfg = c("/etc/config/", "./config",
+configinit(val = list(), cfg = c("/etc/config", "./config",
   "./config.yml"))
 }
 \arguments{
@@ -13,15 +13,11 @@ configinit(val = list(), cfg = c("/etc/config/", "./config",
 \item{cfg}{An array of strings default = c("/etc/config/", "./config", "./config.yml")}
 }
 \description{
-configinit reads all config file from /etc/config/*.yml, ./config/*.yml, ./config.yml
+configinit reads all config file (yaml) in the following places
+**/etc/config/*.yml**, **./config/*.yml**, **./config.yml**
+the places can be specified by user
 }
 \examples{
- configinit(list(myconf="myconf"))
- message(getOption("myconf"))
- readLines(system.file("extdata", "example.yml", package="configoptions"))
- configinit(cfg=system.file("extdata", "example.yml", package="configoptions"))
- getOption("myconf")      # note that myconf still exists
- getOption("config_list")
- getOption("config_int")
- getOption("config_str")
+ configinit()
+
 }
