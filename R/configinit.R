@@ -3,7 +3,7 @@
 #' configinit reads all config file (yaml) in the following places
 #' **/etc/config/*.yml**, **./config/*.yml**, **./config.yml**
 #' the places can be specified by user
-#' 
+#'
 #' @param val A list thet overwrite other configs
 #' @param cfg An array of strings default = c("/etc/config/", "./config", "./config.yml")
 #' @examples
@@ -12,8 +12,10 @@
 #' @importFrom yaml yaml.load_file
 #' @export
 configinit <- function(val=list(),
-                       cfg=c("/etc/config", "./config", "./config.yml")) {
-  lapply(cfg[file.exists(cfg)],
+                       cfg=c("./config", "./config.yml")) {
+  cfg <- c(Sys.getenv("CONFIG_PATH"), cfg)
+  lapply(
+    cfg[file.exists(cfg)],
     function(x) {
       if (dir.exists(x)) {
         fs <- list.files(x, pattern="\\.ya*ml", full.names=TRUE)
